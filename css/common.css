@@ -42,9 +42,10 @@ img {
 
 /* Глобальний контейнер */
 .container {
-  max-width: 1158px;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 100%;
+  max-width: 320px;
+  padding-left: 16px;
+  padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -80,4 +81,18 @@ img {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }

@@ -3,16 +3,22 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 112px 0;
+  padding: 72px 0;
   max-width: 1440px;
   margin: 0 auto;
-  /* Мобільний фон за замовчуванням (Mobile First) */
   background-image:
     linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    image-set(
-      url("../images/hero/people-office-mob.jpg") 1x,
-      url("../images/hero/people-office-mob-2x.jpg") 2x
-    );
+    url("../images/hero/people-office-mob.jpg");
+}
+
+@media (min-resolution: 192dpi),
+  (min-resolution: 2dppx),
+  (min-device-pixel-ratio: 2) {
+  .hero {
+    background-image:
+      linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      url("../images/hero/people-office-mob-2x.jpg");
+  }
 }
 
 .hero-container {
@@ -56,12 +62,20 @@
 /* ПЛАНШЕТ (від 768px) */
 @media screen and (min-width: 768px) {
   .hero {
+    padding: 112px 0;
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      image-set(
-        url("../images/hero/people-office-tab.jpg") 1x,
-        url("../images/hero/people-office-tab-2x.jpg") 2x
-      );
+      url("../images/hero/people-office-tab.jpg");
+  }
+
+  @media (min-resolution: 192dpi),
+    (min-resolution: 2dppx),
+    (min-device-pixel-ratio: 2) {
+    .hero {
+      background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero/people-office-tab-2x.jpg");
+    }
   }
 
   .hero-title {
@@ -78,10 +92,17 @@
     padding: 188px 0;
     background-image:
       linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      image-set(
-        url("../images/hero/people-office-desk.jpg") 1x,
-        url("../images/hero/people-office-desk-2x.jpg") 2x
-      );
+      url("../images/hero/people-office-desk.jpg");
+  }
+
+  @media (min-resolution: 192dpi),
+    (min-resolution: 2dppx),
+    (min-device-pixel-ratio: 2) {
+    .hero {
+      background-image:
+        linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+        url("../images/hero/people-office-desk-2x.jpg");
+    }
   }
 
   .hero-title {
