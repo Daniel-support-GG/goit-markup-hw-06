@@ -1,8 +1,4 @@
 /* Мобільна версія (базова, від 320px) */
-.page-header {
-  /* Залишаємо попередні */
-}
-
 .page-footer {
   background-color: #2e2f42;
   padding: 96px 0;
@@ -160,6 +156,7 @@
   color: #ffffff;
 }
 
+
 /* ПЛАНШЕТ (від 768px) */
 @media screen and (min-width: 768px) {
   .footer-container {
@@ -196,6 +193,7 @@
     width: 264px;
   }
 }
+
 
 /* ДЕСКТОП (від 1158px) */
 @media screen and (min-width: 1158px) {
