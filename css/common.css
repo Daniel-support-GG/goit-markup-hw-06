@@ -1,0 +1,83 @@
+body {
+  font-family: "Roboto", sans-serif;
+  color: #434455;
+  background-color: #ffffff;
+}
+
+/* Скидання відступів, заданих браузером */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* Скидання маркерів і відступів для списків */
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Скидання підкреслення для посилань */
+a {
+  text-decoration: none;
+}
+
+/* Кнопкам задана властивість cursor зі значенням pointer (строго за ТЗ) */
+button {
+  cursor: pointer;
+}
+
+/* Зображення гумові і не вилазять за межі блоку */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Глобальний контейнер */
+.container {
+  max-width: 1158px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Універсальні відступи для секцій */
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/* Патерн для приховування елементів (наприклад, заголовків секцій) */
+.sr-only {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  margin: -1px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
