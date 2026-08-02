@@ -1,3 +1,4 @@
+/* Оверлей мобільного меню */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -12,10 +13,6 @@
     opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
-  padding: 72px 24px 40px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .mobile-menu.is-open {
@@ -24,6 +21,20 @@
   pointer-events: auto;
 }
 
+/* Внутрішній контейнер меню на весь екран через Flexbox */
+.mobile-menu-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding-top: 72px;
+  padding-bottom: 40px;
+  padding-left: 24px; /* Прибираємо конфлікт з загальним .container */
+  padding-right: 24px;
+}
+
+/* Кнопка закриття */
 .mobile-menu-close-btn {
   position: absolute;
   top: 24px;
@@ -32,11 +43,11 @@
   height: 24px;
   border-radius: 50%;
   background-color: #e7e9fc;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
+  border: 1px solid rgba(46, 47, 66, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
   cursor: pointer;
   transition:
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -49,21 +60,25 @@
   border: none;
 }
 
-.mobile-menu-close-icon {
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .mobile-menu-close-btn:hover .mobile-menu-close-icon,
 .mobile-menu-close-btn:focus .mobile-menu-close-icon {
   fill: #ffffff;
 }
 
-.mobile-menu-list {
-  margin-bottom: 48px;
+.mobile-menu-close-icon {
+  fill: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-menu-item:not(:last-child) {
-  margin-bottom: 40px;
+/* Навігація */
+.mobile-menu-nav {
+  margin-bottom: auto;
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .mobile-menu-link {
@@ -71,6 +86,7 @@
   font-size: 36px;
   line-height: 1.11;
   letter-spacing: 0.02em;
+  text-transform: capitalize;
   color: #2e2f42;
   text-decoration: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -82,15 +98,19 @@
   color: #404bbf;
 }
 
+/* Контакти */
 .mobile-menu-address {
   font-style: normal;
   margin-bottom: 48px;
 }
 
-.mobile-menu-address-item:not(:last-child) {
-  margin-bottom: 24px;
+.mobile-menu-address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
+/* Виправляємо кольори: телефон – #4d5ae5, email – #434455 */
 .mobile-menu-address-link {
   font-weight: 500;
   font-size: 20px;
@@ -101,14 +121,21 @@
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.mobile-menu-address-link:hover,
-.mobile-menu-address-link:focus {
-  color: #4d5ae5;
+.mobile-menu-address-item:first-child .mobile-menu-address-link {
+  font-size: 20px;
+  color: #4d5ae5; /* Телефон обов'язково у фірмовому стилі */
 }
 
+.mobile-menu-address-link:hover,
+.mobile-menu-address-link:focus {
+  color: #404bbf;
+}
+
+/* Соціальні іконки внизу */
 .mobile-menu-social-list {
   display: flex;
   gap: 40px;
+  justify-content: flex-start;
 }
 
 .mobile-menu-social-item {
@@ -134,10 +161,4 @@
 
 .mobile-menu-social-icon {
   fill: #f4f4fd;
-}
-
-@media screen and (min-width: 768px) {
-  .mobile-menu {
-    display: none;
-  }
 }
